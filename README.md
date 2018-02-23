@@ -5,6 +5,12 @@
 
 #### [Alternative reference PyTorch implementation](https://github.com/williamleif/graphsage-simple/)
 
+### Changes we've made to the original GraphSAGE repo
+
+1. python3 compatibility
+2. remove summary op running in unsupervised_train.py, to get precise timing
+3. add cora dataset
+
 ### Overview
 
 This directory contains code necessary to run the GraphSage algorithm.

@@ -270,10 +270,10 @@ def train(train_data, test_data=None):
 
             t = time.time()
             # Training step
-            outs = sess.run([merged, model.opt_op, model.loss, model.ranks, model.aff_all, 
+            outs = sess.run([model.opt_op, model.loss, model.ranks, model.aff_all, 
                     model.mrr, model.outputs1], feed_dict=feed_dict)
-            train_cost = outs[2]
-            train_mrr = outs[5]
+            train_cost = outs[1]
+            train_mrr = outs[4]
             if train_shadow_mrr is None:
                 train_shadow_mrr = train_mrr#
             else:
@@ -290,8 +290,8 @@ def train(train_data, test_data=None):
             else:
                 shadow_mrr -= (1-0.99) * (shadow_mrr - val_mrr)
 
-            if total_steps % FLAGS.print_every == 0:
-                summary_writer.add_summary(outs[0], total_steps)
+            #if total_steps % FLAGS.print_every == 0:
+            #    summary_writer.add_summary(outs[0], total_steps)
     
             # Print results
             avg_time = (avg_time * total_steps + time.time() - t) / (total_steps + 1)
