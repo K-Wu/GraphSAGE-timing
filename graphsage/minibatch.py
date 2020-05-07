@@ -117,7 +117,7 @@ class EdgeMinibatchIterator(object):
             batch1.append(self.id2idx[node1])
             batch2.append(self.id2idx[node2])
 
-        feed_dict = dict()
+        feed_dict = {}
         feed_dict.update({self.placeholders['batch_size'] : len(batch_edges)})
         feed_dict.update({self.placeholders['batch1']: batch1})
         feed_dict.update({self.placeholders['batch2']: batch2})
@@ -266,7 +266,7 @@ class NodeMinibatchIterator(object):
         batch1 = [self.id2idx[n] for n in batch1id]
               
         labels = np.vstack([self._make_label_vec(node) for node in batch1id])
-        feed_dict = dict()
+        feed_dict = {}
         feed_dict.update({self.placeholders['batch_size'] : len(batch1)})
         feed_dict.update({self.placeholders['batch']: batch1})
         feed_dict.update({self.placeholders['labels']: labels})
