@@ -415,7 +415,7 @@ class SeqAggregator(Layer):
 
         with tf.variable_scope(self.name) as scope:
             try:
-                rnn_outputs, rnn_states = tf.nn.dynamic_rnn(
+                rnn_outputs, _ = tf.nn.dynamic_rnn(
                         self.cell, neigh_vecs,
                         initial_state=initial_state, dtype=tf.float32, time_major=False,
                         sequence_length=length)

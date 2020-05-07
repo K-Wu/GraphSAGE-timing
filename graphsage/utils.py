@@ -79,9 +79,9 @@ def run_random_walks(G, nodes, num_walks=N_WALKS):
     for count, node in enumerate(nodes):
         if G.degree(node) == 0:
             continue
-        for i in range(num_walks):
+        for _ in range(num_walks):
             curr_node = node
-            for j in range(WALK_LEN):
+            for _ in range(WALK_LEN):
                 next_node = random.choice(G.neighbors(curr_node))
                 # self co-occurrences are useless
                 if curr_node != node:
