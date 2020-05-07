@@ -22,8 +22,6 @@ def run_regression(train_embeds, train_labels, test_embeds, test_labels):
     dummy.fit(train_embeds, train_labels)
     log = MultiOutputClassifier(SGDClassifier(loss="log"), n_jobs=10)
     log.fit(train_embeds, train_labels)
-
-    f1 = 0
     for i in range(test_labels.shape[1]):
         print("F1 score", f1_score(test_labels[:,i], log.predict(test_embeds)[:,i], average="micro"))
     for i in range(test_labels.shape[1]):
