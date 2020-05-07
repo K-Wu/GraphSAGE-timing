@@ -42,7 +42,8 @@ class Layer(object):
     def __init__(self, **kwargs):
         allowed_kwargs = {'name', 'logging', 'model_size'}
         for kwarg in kwargs.keys():
-            assert kwarg in allowed_kwargs, 'Invalid keyword argument: ' + kwarg
+            if kwarg not in allowed_kwargs:
+                raise AssertionError('Invalid keyword argument: ' + kwarg)
         name = kwargs.get('name')
         if not name:
             layer = self.__class__.__name__.lower()
