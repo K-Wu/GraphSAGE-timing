@@ -261,7 +261,7 @@ class NodeMinibatchIterator(object):
     def end(self):
         return self.batch_num * self.batch_size >= len(self.train_nodes)
 
-    def batch_feed_dict(self, batch_nodes, val=False):
+    def batch_feed_dict(self, batch_nodes, _val=False):
         batch1id = batch_nodes
         batch1 = [self.id2idx[n] for n in batch1id]
               
