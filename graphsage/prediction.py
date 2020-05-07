@@ -79,7 +79,7 @@ class BipartiteEdgePredLayer(Layer):
             result = tf.reduce_sum(inputs1 * inputs2, axis=1)
         return result
 
-    def neg_cost(self, inputs1, neg_samples, hard_neg_samples=None):
+    def neg_cost(self, inputs1, neg_samples, _hard_neg_samples=None):
         """ For each input in batch, compute the sum of its affinity to negative samples.
 
         Returns:

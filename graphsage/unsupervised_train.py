@@ -373,7 +373,7 @@ def train(train_data, test_data=None):
 
     
 
-def main(argv=None):
+def main(_argv=None):
     print("Loading training data..")
     train_data = load_data(FLAGS.train_prefix, load_walks=True)
     print("Done loading training data..")

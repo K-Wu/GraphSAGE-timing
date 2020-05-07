@@ -406,7 +406,7 @@ class SampleAndAggregate(GeneralizedModel):
 
 
 class Node2VecModel(GeneralizedModel):
-    def __init__(self, placeholders, dict_size, degrees, name=None,
+    def __init__(self, placeholders, dict_size, degrees, _name=None,
                  nodevec_dim=50, lr=0.001, **kwargs):
         """ Simple version of Node2Vec/DeepWalk algorithm.
 
